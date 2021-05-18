@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "karthickSpecflowCourse-gl", "karthickSpecflowCourse-gl\karthickSpecflowCourse-gl.csproj", "{2B96B8E8-C540-4433-85AA-A3A607D35707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nUnit-gl", "nUnit\nUnit-gl.csproj", "{53CEE3DD-A4B7-4DC6-A648-BC4A91647EA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{2B96B8E8-C540-4433-85AA-A3A607D35707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B96B8E8-C540-4433-85AA-A3A607D35707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B96B8E8-C540-4433-85AA-A3A607D35707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53CEE3DD-A4B7-4DC6-A648-BC4A91647EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CEE3DD-A4B7-4DC6-A648-BC4A91647EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CEE3DD-A4B7-4DC6-A648-BC4A91647EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CEE3DD-A4B7-4DC6-A648-BC4A91647EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
