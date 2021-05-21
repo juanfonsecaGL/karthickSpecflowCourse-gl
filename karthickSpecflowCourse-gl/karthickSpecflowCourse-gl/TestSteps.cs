@@ -11,7 +11,7 @@ namespace karthickSpecflowCoursegl
     [Binding]
     public class TestSteps
     {
-        [Given("I have entered (.*) into the calculator")]
+        [Given("I have entered \"(.*)\" into the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
         {
             // TODO: implement arrange (recondition) logic
@@ -34,7 +34,7 @@ namespace karthickSpecflowCoursegl
             ScenarioContext.Current.Pending();
         }
 
-        [Then("the result should be (.*) on the screen")]
+        [Then("the result should be \"(.*)\" on the screen")]
         public void ThenTheResultShouldBe(int result)
         {
             // TODO: implement assert (verification) logic

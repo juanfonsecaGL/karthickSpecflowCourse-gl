@@ -3,7 +3,7 @@ using RestSharp.Serialization.Json;
 using System.Collections.Generic;
 using RestSharp;
 
-namespace nUnitgl
+namespace nUnit
 {
     [TestClass]
     public class UnitTest1

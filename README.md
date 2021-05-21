@@ -18,3 +18,10 @@ http://localhost:3000/posts/1
 http://localhost:3000/comments/1
 http://localhost:3000/profile/1
 ```
+
+Gherkin reference:
+	* https://docs.specflow.org/projects/specflow/en/latest/Gherkin/Gherkin-Reference.html
+
+To fix error with specflow:
+* https://specflow.org/blog/changes-to-the-specflow-visual-studio-extension/
+* https://stackoverflow.com/questions/65345910/error-specflow-designer-codebehind-generation-is-not-compatible-with-msbuild-c
