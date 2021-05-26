@@ -25,3 +25,6 @@ Gherkin reference:
 To fix error with specflow:
 * https://specflow.org/blog/changes-to-the-specflow-visual-studio-extension/
 * https://stackoverflow.com/questions/65345910/error-specflow-designer-codebehind-generation-is-not-compatible-with-msbuild-c
+
+Azure pipeline:
+* https://dev.azure.com/juanfonsecasolisgl/karthickSpeckflowCourse-gl
