@@ -1,60 +1,75 @@
 ﻿using RestSharp.Serialization.Json;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestSharp.Serialization.Json;
 using System.Collections.Generic;
 using RestSharp;
-using NUnit.Framework;
-using Newtonsoft.Json.Linq;
 
-/*using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using RelevantCodes.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using AventStack.ExtentReports;
+using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;*/
+using Newtonsoft.Json.Linq;
 
 namespace nUnit
 {
-    [TestFixture]
+    [TestClass]
     public class nUnitTestExtendedReports
     {
-        //public ExtentReports extent;
-        //public ExtentTest test;
+        public static ExtentTest test;
+        public static ExtentReports extent;
+        static string basepath = "/Users/juan.fonseca/Desktop/";
 
         public nUnitTestExtendedReports()
         {
         }
 
         [OneTimeSetUp]
-        public void StartReport()
+        public void ExtentStart()
         {
-            /*string path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
-            string actualPath = path.Substring(0, path.LastIndexOf("bin"));
-            string projectPath = new Uri(actualPath).LocalPath;
-            string reportPath = projectPath + "ReportsMyOwnReport.html";
 
-            extent = new ExtentReports(reportPath, true);
-            extent
-            .AddSystemInfo("Host Name", "Krishna")
-            .AddSystemInfo("Environment", "QA")
-            .AddSystemInfo("User Name", "Krishna Sakinala");
-            extent.LoadConfig(projectPath + "extent-config.xml");*/
+            /*extent = new ExtentReports();
+            var htmlreporter = new ExtentHtmlReporter(
+                @$"{basepath}\Report{ DateTime.Now.ToString("_MMddyyyy_hhmmtt") }.html");
+            extent.AttachReporter(htmlreporter);*/
         }
 
-        [Test]
+        [TestMethod]
         public void TestMethod1()
         {
+
+            extent = new ExtentReports();
+            var htmlreporter = new ExtentHtmlReporter(
+                @$"{basepath}\Report{ DateTime.Now.ToString("_MMddyyyy_hhmmtt") }.html");
+            extent.AttachReporter(htmlreporter);
+
+            test = null;
+            test = extent.CreateTest("T001").Info("Login Test");
+
+            // TC
             var client = new RestClient("http://localhost:3000");
             var request = new RestRequest("posts/{postid}", Method.GET);
             request.AddUrlSegment("postid", 1);
+            test.Log(Status.Info, "Invoked request");
 
             var response = client.Execute(request);
             System.Console.WriteLine($"Result: {response.Content.ToString()}");
 
-            JObject obs = JObject.Parse(response.Content);
+            var deserialize = new JsonDeserializer();
+            var output = deserialize.Deserialize<Dictionary<string, string>>(response);
+            var authorCurrent = output["author"];
 
-            Assert.That(obs["author"].ToString(), Is.EqualTo("typicode"), "Author is not correct.");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert
+                .AreEqual(authorCurrent, "typicode", "Author is not correct.");
+            test.Log(Status.Pass, "Test Pass");
+
+            extent.Flush();
+
+        }
+
+        [OneTimeTearDown]
+        public void ExtentClose()
+        {
+            extent.Flush();
         }
     }
 }

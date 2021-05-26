@@ -20,7 +20,7 @@ http://localhost:3000/profile/1
 ```
 
 Gherkin reference:
-	* https://docs.specflow.org/projects/specflow/en/latest/Gherkin/Gherkin-Reference.html
+* https://docs.specflow.org/projects/specflow/en/latest/Gherkin/Gherkin-Reference.html
 
 To fix error with specflow:
 * https://specflow.org/blog/changes-to-the-specflow-visual-studio-extension/
