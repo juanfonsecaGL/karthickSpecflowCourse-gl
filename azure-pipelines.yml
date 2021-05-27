@@ -13,10 +13,10 @@ steps:
 - script: echo Starting
   displayName: 'Run a one-line script'
 
-- task: SpecFlowPlus@0
-  inputs:
-    generatorSource: karthickSpecflowCourse-gl/karthickSpecflowCourse-gl
-    projectFilePath:  karthickSpecflowCourse-gl
+#- task: SpecFlowPlus@0
+#  inputs:
+#    generatorSource: karthickSpecflowCourse-gl/karthickSpecflowCourse-gl
+#    projectFilePath:  karthickSpecflowCourse-gl
     #testAssemblyFilePath:  # Required when generatorSource == TestAssembly
     #featureDataJsonFilePath:  # Required when generatorSource == FeatureData
     #projectName: # Optional
