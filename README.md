@@ -7,6 +7,7 @@ On the NuGet packages manager:
 * Specflow 
 * Speclow.Assist
 * Rest assure
+* NUnit3TestAdapter
 
 Json server:
 * Install: `npm install -g json-server`

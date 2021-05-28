@@ -1,6 +1,5 @@
 ﻿using RestSharp.Serialization.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RestSharp.Serialization.Json;
 using System.Collections.Generic;
 using RestSharp;
 

@@ -25,7 +25,7 @@ namespace nUnit
 
             JObject obs = JObject.Parse(response.Content);
 
-            Assert.That(obs["id"].ToString(), Is.EqualTo("1"), "Page is not correct.");
+            Assert.That(obs["id"].ToString(), Is.EqualTo("1"), "ID is not correct.");
         }
     }
 }
