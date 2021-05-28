@@ -46,20 +46,19 @@ namespace nUnit
             test = extent.CreateTest("T001").Info("Login Test");
 
             // TC
-            var client = new RestClient("http://localhost:3000");
-            var request = new RestRequest("posts/{postid}", Method.GET);
-            request.AddUrlSegment("postid", 1);
-            test.Log(Status.Info, "Invoked request");
+            var client = new RestClient("https://pokeapi.co/");
+            var request = new RestRequest("api/v2/pokemon/{pokemonID}", Method.GET);
+            request.AddUrlSegment("pokemonID", 1);
 
             var response = client.Execute(request);
             System.Console.WriteLine($"Result: {response.Content.ToString()}");
 
             var deserialize = new JsonDeserializer();
             var output = deserialize.Deserialize<Dictionary<string, string>>(response);
-            var authorCurrent = output["author"];
+            var valueCurrent = output["id"];
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert
-                .AreEqual(authorCurrent, "typicode", "Author is not correct.");
+                .AreEqual(valueCurrent, "1", "Page is not correct.");
             test.Log(Status.Pass, "Test Pass");
 
             extent.Flush();

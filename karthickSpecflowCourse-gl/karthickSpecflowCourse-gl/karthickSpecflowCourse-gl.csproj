@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('..\packages\Microsoft.Extensions.Configuration.UserSecrets.2.2.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   <Import Project="..\packages\SpecFlow.NUnit.3.8.7\build\SpecFlow.NUnit.props" Condition="Exists('..\packages\SpecFlow.NUnit.3.8.7\build\SpecFlow.NUnit.props')" />
@@ -408,7 +408,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Test.feature">
-      <Generator></Generator>
+      <Generator>
+      </Generator>
       <LastGenOutput>Test.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
@@ -416,6 +417,7 @@
   <ItemGroup>
     <Compile Include="Test.feature.cs">
       <DependentUpon>Test.feature</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="TestSteps.cs" />
     <Compile Include="Calculator.cs" />

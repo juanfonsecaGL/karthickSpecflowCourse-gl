@@ -16,16 +16,16 @@ namespace nUnit
         [Test]
         public void TestMethod1()
         {
-            var client = new RestClient("http://localhost:3000");
-            var request = new RestRequest("posts/{postid}", Method.GET);
-            request.AddUrlSegment("postid", 1);
+            var client = new RestClient("https://pokeapi.co/");
+            var request = new RestRequest("api/v2/pokemon/{pokemonID}", Method.GET);
+            request.AddUrlSegment("pokemonID", 1);
 
             var response = client.Execute(request);
             System.Console.WriteLine($"Result: {response.Content.ToString()}");
 
             JObject obs = JObject.Parse(response.Content);
 
-            Assert.That(obs["author"].ToString(), Is.EqualTo("typicode"), "Author is not correct.");
+            Assert.That(obs["id"].ToString(), Is.EqualTo("1"), "Page is not correct.");
         }
     }
 }
